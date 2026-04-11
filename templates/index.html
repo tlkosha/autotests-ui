@@ -17,16 +17,50 @@
         }
 
         #h1-text {
-            font-size: 50px
+            font-size: 100px
         }
+
+        div.git > a{
+            color: mediumpurple
+        }
+
+        ul li{
+            color: cornflowerblue
+        }
+
+        input[type="text"]{
+            background-color: coral
+        }
+
+        input[type="text"]:hover {
+            background-color: lightseagreen;
+        }
+
+        a:hover{
+            color: darkseagreen
+        }
+
+        li::marker{
+            color: red
+        }
+
+        ul > li:nth-child(2){
+            color: darkblue
+        }
+
+        div.nth > p:nth-of-type(3) {
+            background-color: darkmagenta
+        }
+
 
     </style>
 </head>
 <body>
-<div>
+<div class = "git">
     <h1 id="h1-text">H1 text</h1>
+    <h1>H1 text</h1>
     <h2 class="h2-text">H2 text</h2>
-    <h6 class="h6-text">H6 text</h6>
+    <h6 class="h2-text h6-text">H6 text</h6>
     <p>Приветствую Вас, <span style="color: green">дорогие друзья</span>, на моей странице!</p>
     <a href="https://learngitbranching.js.org/" target="_blank">Git learn</a>
     <img alt="gitgame.png" src="https://stepik.org/static/frontend/learning/header-img-evening.png" style="width: 250px">
@@ -40,6 +74,33 @@
         <li>Элемент2</li>
         <li>Элемент3</li>
     </ol>
+    <form action="/action" method="POST">
+        <input type="text" value="12345" placeholder="Text">
+        <input required type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <textarea required placeholder="Text">12345</textarea>
+        <button type="submit" disabled>Text </button>
+    </form>
+    <div class="nth">
+        <p>1</p>
+        <p>2</p>
+        <h6>3</h6>
+        <h5>4</h5>
+        <p>5</p>
+    </div>
+    </div>
+
+
+<div class = "java-script">
+    <a href="https://learngitbranching.js.org/" target="_blank">JAVA</a>
+    <h2 class="h2-text">H2 text</h2>
+    <ul>
+        <li>Элемент1</li>
+        <li>Элемент2</li>
+        <li>Элемент3</li>
+    </ul>
+
 </div>
+
 </body>
 </html>
