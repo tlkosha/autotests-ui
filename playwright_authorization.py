@@ -1,8 +1,8 @@
 from playwright.sync_api import sync_playwright, expect
 
 with sync_playwright() as playwright:
-    browser = playwright.chromium.launch(headless=False)
-    page = browser.new_page()
+    browser = playwright.chromium.launch(headless=False) #headless=False - значит запуск браузера с интерфейсом
+    page = browser.new_page() #команда для открытия новой страницы браузера
 
     page.goto("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/login")
 
