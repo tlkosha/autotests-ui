@@ -5,7 +5,7 @@ def log_request(request: Request):
     print(f'Request: {request.url}') #функция печатает куда ушел реквест
 
 def log_response(response: Response):
-    print(f'Response: {response.url}') #функция печатает откуда пришел респонс
+    print(f'Response: {response.url}, {response.status}') #функция печатает откуда пришел респонс и статус респонса
 
 
 
