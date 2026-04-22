@@ -1,12 +1,14 @@
+from typing import Any, Generator
+
 import pytest
 from playwright.sync_api import Page, Playwright
 
 
 @pytest.fixture
-def chromium_page(playwright: Playwright) -> Page:
-        browser = playwright.chromium.launch(headless=False)  # headless=False - значит запуск браузера с интерфейсом
-        yield browser.new_page()
-        browser.close()
+def chromium_page(playwright: Playwright) -> Generator[Page, Any, None]:
+    browser = playwright.chromium.launch(headless=False)  # headless=False - значит запуск браузера с интерфейсом
+    yield browser.new_page()
+    browser.close()
 
 
 @pytest.fixture(scope='session')
@@ -34,7 +36,7 @@ def chromium_browser_state(playwright: Playwright):
 
 
 @pytest.fixture
-def chromium_page_with_state(initialize_browser_state, playwright: Playwright) -> Page:
+def chromium_page_with_state(initialize_browser_state, playwright: Playwright) -> Generator[Page, Any, None]:
     browser = playwright.chromium.launch(headless=False)
     context = browser.new_context(storage_state="browser-state.json")
     yield context.new_page()

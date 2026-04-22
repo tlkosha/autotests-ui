@@ -1,3 +1,4 @@
-pytest_plagins = (
+pytest_plugins = (
+    "fixtures.pages",
     "fixtures.browsers"
 )
