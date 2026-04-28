@@ -1,11 +1,13 @@
 import pytest
-from playwright.sync_api import Page
+import allure
 
-from pages.courses_list_page import CoursesListPage
-from pages.create_course_page import CreateCoursePage
+from pages.courses.courses_list_page import CoursesListPage
+from pages.courses.create_course_page import CreateCoursePage
 
 @pytest.mark.regression
 @pytest.mark.courses
+@allure.title('Create course')
+@allure.tag('REGRESSION')
 def test_create_course(courses_list_page: CoursesListPage, create_course_page: CreateCoursePage ):
     create_course_page.visit("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses/create")
     create_course_page.check_visible_create_course_title()
@@ -20,8 +22,8 @@ def test_create_course(courses_list_page: CoursesListPage, create_course_page: C
     create_course_page.check_visible_image_upload_view(is_image_uploaded=True)
     create_course_page.fill_create_course_form('Playwright', '2 weeks', 'Playwright', '100', '10')
     create_course_page.click_create_course_button()
-    #courses_list_page.check_visible_courses_title()
-    #courses_list_page.check_visible_create_course_button()
+    courses_list_page.check_visible_courses_title()
+    courses_list_page.check_visible_create_course_button()
     courses_list_page.check_visible_course_card(0, 'Playwright', '100', '10', '2 weeks')
 
 
